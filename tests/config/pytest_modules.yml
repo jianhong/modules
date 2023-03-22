@@ -1006,6 +1006,10 @@ falco:
   - modules/nf-core/falco/**
   - tests/modules/nf-core/falco/**
 
+fanc/compartments:
+  - modules/nf-core/fanc/compartments/**
+  - tests/modules/nf-core/fanc/compartments/**
+
 faqcs:
   - modules/nf-core/faqcs/**
   - tests/modules/nf-core/faqcs/**

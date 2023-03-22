@@ -1,0 +1,43 @@
+name: "fanc_compartments"
+description: AB compartment analysis by FanC
+keywords:
+  - compartments
+tools:
+  - "fanc":
+      description: "Framework for the ANalysis of C-data."
+      homepage: "https://vaquerizaslab.github.io/fanc"
+      documentation: "https://vaquerizaslab.github.io/fanc"
+      tool_dev_url: "https://github.com/vaquerizaslab/fanc"
+      doi: "https://doi.org/10.1186/s13059-020-02215-9"
+      licence: "GPL-3.0"
+
+input:
+  - meta:
+      type: map
+      description: |
+        Groovy Map containing sample information
+        e.g. [ id:'test', single_end:false ]
+  - matrix:
+      type: file
+      description: FAN-C/Juicer/Cooler matrix file
+      pattern: "*.{hic,cool,mcool}"
+  - resolution:
+      type: value
+      description: resolution for Juicer/Cooler files, see https://fan-c.readthedocs.io/en/latest/fanc-executable/fanc-analyse-hic/ab_compartments.html for details.
+
+output:
+  - meta:
+      type: map
+      description: |
+        Groovy Map containing sample information
+        e.g. [ id:'test', single_end:false ]
+  - versions:
+      type: file
+      description: File containing software versions
+      pattern: "versions.yml"
+  - compartments:
+      type: file
+      description: output files from fanc compartments
+
+authors:
+  - "@jianhong"
